@@ -1,0 +1,237 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Escalação</title>
+
+<style>
+    body {
+        margin: 0;
+        background: white;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .faixa-titulo {
+        width: 100%;
+        background-color: #8B0000;
+        padding: 20px 0;
+        text-align: center;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    .btn-voltar {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #8B0000;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+        z-index: 1000;
+    }
+
+    .btn-voltar:hover {
+        background-color: #a30000;
+    }
+
+    .campo {
+        position: relative;
+        width: 90%;
+        max-width: 1000px;
+        height: 600px;
+        margin: 20px 0;
+        background: linear-gradient(
+            to right,
+            #0b6623 12.5%, #138c36 12.5%, #138c36 25%,
+            #0b6623 25%, #0b6623 37.5%, #138c36 37.5%,
+            #138c36 50%, #0b6623 50%, #0b6623 62.5%,
+            #138c36 62.5%, #138c36 75%, #0b6623 75%,
+            #0b6623 87.5%, #138c36 87.5%, #138c36 100%
+        );
+        border: 5px solid white;
+    }
+
+    .meio {
+        position: absolute;
+        left: 50%;
+        width: 2px;
+        height: 100%;
+        background: white;
+    }
+
+    .circulo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 120px;
+        height: 120px;
+        border: 2px solid white;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .gol-esq, .gol-dir {
+        position: absolute;
+        top: 250px;
+        width: 50px;
+        height: 100px;
+        border: 2px solid white;
+    }
+
+    .gol-esq { left: 0; }
+    .gol-dir { right: 0; }
+
+    .jogador {
+        position: absolute;
+        width: 80px;
+        text-align: center;
+        color: white;
+        font-size: 12px;
+    }
+
+    .jogador img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid #8B0000;
+    }
+
+    /* GOLEIRO */
+    .gk { left: 5%; top: 50%; transform: translate(-50%, -50%); }
+
+    /* DEFESA */
+    .l1 { left: 15%; top: 15%; transform: translate(-50%, -50%); } /* Mazraoui (esquerda) */
+    .z1 { left: 21%; top: 33%; transform: translate(-50%, -50%); }
+    .z2 { left: 21%; top: 63%; transform: translate(-50%, -50%); }
+    .l2 { left: 15%; top: 85%; transform: translate(-50%, -50%); } /* Hakimi (direita) */
+
+    /* MEIO */
+    .m1 { left: 45%; top: 27%; transform: translate(-50%, -50%); }
+    .m2 { left: 40%; top: 50%; transform: translate(-50%, -50%); }
+    .m3 { left: 45%; top: 73%; transform: translate(-50%, -50%); }
+
+    /* ATAQUE */
+    .a1 { left: 75%; top: 25%; transform: translate(-50%, -50%); } /* Boufal (esquerda) */
+    .a2 { left: 85%; top: 50%; transform: translate(-50%, -50%); }
+    .a3 { left: 75%; top: 75%; transform: translate(-50%, -50%); } /* Ziyech (direita) */
+
+    .texto {
+        width: 90%;
+        max-width: 1000px;
+        background: #fff3cd;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    footer {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        background: #f1f1f1;
+        font-size: 14px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="faixa-titulo">Escalação</div>
+
+<a href="index.html" class="btn-voltar">← Voltar</a>
+
+<div class="campo">
+
+    <div class="meio"></div>
+    <div class="circulo"></div>
+    <div class="gol-esq"></div>
+    <div class="gol-dir"></div>
+
+    <!-- GOLEIRO -->
+    <div class="jogador gk">
+        <img src="https://i2-prod.irishmirror.ie/incoming/article28595174.ece/ALTERNATES/s615/2_GettyImages-1443832906.jpg">
+        <div>GOL<br>Yassine Bounou</div>
+    </div>
+
+    <!-- DEFESA -->
+    <div class="jogador l1">
+        <img src="https://th.bing.com/th/id/OIP.HIvN-o5YqdoEPXYT63tEggHaD8?w=330&h=182&c=7&r=0&o=7&pid=1.7&rm=3">
+        <div>LE<br>Achraf Hakimi</div>
+    </div>
+
+    <div class="jogador z1">
+        <img src="https://th.bing.com/th?id=OIF.3C7M2g5%2fLKCGMelxDA0uWg&w=148&h=150&c=7&r=0&o=7&pid=1.7&rm=3">
+        <div>ZAG<br>Issa Diop</div>
+    </div>
+
+    <div class="jogador z2">
+        <img src="https://th.bing.com/th/id/OIP.t0t0dCO8BNhdIZLjyax-4QHaHa?w=179&h=180&c=7&r=0&o=7&pid=1.7&rm=3">
+        <div>ZAG<br>Chadi Riad</div>
+    </div>
+
+    <div class="jogador l2">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.JUxAi8y21Y2nauC_aqf-iwHaE8?w=1200&h=800&rs=1&pid=ImgDetMain&o=7&rm=3">
+        <div>LD<br>Noussair Mazraoui</div>
+    </div>
+
+    <!-- MEIO -->
+    <div class="jogador m1">
+        <img src="https://tse1.explicit.bing.net/th/id/OIP.GqqbjPfQWdOEDn-a46aHQQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3">
+        <div>MC<br>Sofyan Amrabat</div>
+    </div>
+
+    <div class="jogador m2">
+        <img src="https://sportune.20minutes.fr/wp-content/uploads/2022/12/Azzedine-Ounahi.jpg">
+        <div>MEI<br>Azzedine Ounahi </div>
+    </div>
+
+    <div class="jogador m3">
+        <img src="https://www.footballdatabase.eu/images/photos/players/2022-2023/a_394/394945.jpg">
+        <div>MC<br>Ismael Saibari</div>
+    </div>
+
+    <!-- ATAQUE -->
+    <div class="jogador a1">
+        <img src="https://a.espncdn.com/photo/2023/0703/soc_08_brahim-diaz__92062494.png">
+        <div>PE<br>Brahim Díaz</div>
+    </div>
+
+    <div class="jogador a2">
+        <img src="https://th.bing.com/th/id/OIP.xwZi1hwP3tI0a884HOgEmQHaE8?w=250&h=180&c=7&r=0&o=7&pid=1.7">
+        <div>ATA<br>Youssef En-Nesyri</div>
+    </div>
+
+    <div class="jogador a3">
+        <img src="https://tmssl.akamaized.net/images/portrait/header/724520-1636969902.jpg?lm=1636969921">
+        <div>PD<br>Abde Ezzalzoul</div>
+    </div>
+
+</div>
+
+<div class="texto">
+    A seleção do Seleção Marroquina de Futebol chega a 2026 como uma das equipes mais respeitadas do cenário internacional. Após a campanha histórica na Copa do Mundo FIFA 2022, quando alcançou as semifinais e encantou o mundo, Marrocos consolidou sua imagem como uma força emergente no futebol.
+
+    O time combina talento, disciplina tática e muita intensidade. Jogadores como Achraf Hakimi, conhecido pela velocidade e apoio ao ataque, e Hakim Ziyech, destaque pela criatividade e qualidade técnica, seguem sendo peças importantes. Além deles, a nova geração vem ganhando espaço, trazendo ainda mais energia e renovação ao elenco.
+    
+    Sob o comando de Walid Regragui, a seleção mantém um estilo de jogo organizado, com uma defesa sólida e transições rápidas para o ataque. Essa estratégia tem sido fundamental para enfrentar seleções tradicionais de igual para igual.
+    
+    Para a Copa do Mundo FIFA 2026, a expectativa é alta. Marrocos entra como candidato a surpreender novamente, mostrando que sua campanha anterior não foi acaso. Com uma torcida apaixonada e um elenco competitivo, a equipe africana busca fazer mais história e, quem sabe, alcançar uma final inédita.
+</div>
+
+<footer>
+    <p>&copy; Escalação da seleção do Marrocos.</p>
+</footer>
+
+</body>
+</html>
